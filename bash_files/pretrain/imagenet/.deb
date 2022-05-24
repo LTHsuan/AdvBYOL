@@ -1,0 +1,214 @@
+Global seed set to 5
+wandb: Currently logged in as: tinghsuan (use `wandb login --relogin` to force relogin)
+Namespace(accelerator='gpu', accumulate_grad_batches=16, amp_backend='native', amp_level=None, attack_method=['fgsm', 'fgsm'], auto_lr_find=False, auto_resume=False, auto_scale_batch_size=False, auto_select_gpus=False, auto_umap=False, backbone='resnet50', backbone_args={'cifar': False, 'zero_init_residual': False}, base_tau_momentum=0.99, batch_size=128, benchmark=False, binary_search_steps=[4, 4], brightness=[0.4], check_val_every_n_epoch=1, checkpoint_callback=None, checkpoint_dir=PosixPath('trained_models'), checkpoint_frequency=1, classifier_lr=0.2, color_jitter_prob=[0.8], contrast=[0.4], crop_size=[224], cw_lr=[0.2, 0.2], dali=False, dali_device='gpu', data_dir=PosixPath('/data2'), dataset='adv_imagenet', debug_augmentations=False, decay_factor=[1.0, 1.0], default_root_dir=None, detect_anomaly=False, deterministic=False, devices=None, distance=['Linf', 'Linf'], diversity_prob=[0.7, 0.7], enable_checkpointing=True, enable_model_summary=True, enable_progress_bar=True, encode_indexes_into_labels=False, entity='tinghsuan', eps=[0.03137254901960784, 0.03137254901960784], eta_lars=0.001, exclude_bias_n_norm=True, extra_optimizer_args={'momentum': 0.9}, fast_dev_run=False, final_tau_momentum=1.0, flush_logs_every_n_steps=None, gaussian_prob=[1.0, 0.1], gpus=[4, 7], grad_clip_lars=False, gradient_clip_algorithm=None, gradient_clip_val=None, gray_scale_prob=[0.2], horizontal_flip_prob=[0.5], hue=[0.1], init_const=[0.01, 0.01], ipus=None, kappa=[0.0, 0.0], knn_eval=False, knn_k=20, lars=True, limit_predict_batches=1.0, limit_test_batches=1.0, limit_train_batches=1.0, limit_val_batches=1.0, log_every_n_steps=50, log_gpu_memory=None, logger=True, loss=['ce', 'ce'], lr=0.45, lr_decay_steps=None, max_cw_iter=[200, 200], max_epochs=100, max_iter=[50, 50], max_scale=[1.0], max_steps=-1, max_time=None, mean=[0.485, 0.456, 0.406], method='Adv_byol', min_epochs=None, min_lr=0.0, min_scale=[0.08], min_steps=None, momentum_classifier=True, move_metrics_to_cpu=False, multiple_trainloader_mode='max_size_cycle', name='byol-resnet50-imagenet-100ep', no_labels=False, num_classes=2000, num_crops_per_aug=[1, 1], num_large_crops=1, num_nodes=1, num_processes=1, num_sanity_val_steps=2, num_small_crops=0, num_workers=4, offline=False, optimizer='sgd', overfit_batches=0.0, overshoot=[0.02, 0.02], plugins=None, precision=16, pred_hidden_dim=4096, prepare_data_per_node=None, process_position=0, profiler=None, progress_bar_refresh_rate=None, proj_hidden_dim=4096, proj_output_dim=256, project='solo-learn', reload_dataloaders_every_epoch=False, reload_dataloaders_every_n_epochs=0, replace_sampler_ddp=True, resize_rate=[0.85, 0.85], resume_from_checkpoint=None, saturation=[0.2], save_checkpoint=True, scheduler='warmup_cosine', solarization_prob=[0.0, 0.2], std=[0.228, 0.224, 0.225], steps=[20, 20], stepsize=[0.003137254901960784, 0.003137254901960784], stochastic_weight_avg=False, strategy='ddp', sync_batchnorm=True, target=[True, True], target_net=['resnet50', 'resnet50'], terminate_on_nan=None, tpu_cores=None, track_grad_norm=-1, train_dir=PosixPath('1K_New/train'), transform_kwargs=[{'attack_method': 'fgsm', 'target_net': 'resnet50', 'distance': 'Linf', 'loss': 'ce', 'target': True, 'eps': 0.03137254901960784, 'stepsize': 0.003137254901960784, 'steps': 20, 'decay_factor': 1.0, 'resize_rate': 0.85, 'diversity_prob': 0.7, 'overshoot': 0.02, 'max_iter': 50, 'max_cw_iter': 200, 'binary_search_steps': 4, 'cw_lr': 0.2, 'init_const': 0.01, 'kappa': 0.0}, {'attack_method': 'fgsm', 'target_net': 'resnet50', 'distance': 'Linf', 'loss': 'ce', 'target': True, 'eps': 0.03137254901960784, 'stepsize': 0.003137254901960784, 'steps': 20, 'decay_factor': 1.0, 'resize_rate': 0.85, 'diversity_prob': 0.7, 'overshoot': 0.02, 'max_iter': 50, 'max_cw_iter': 200, 'binary_search_steps': 4, 'cw_lr': 0.2, 'init_const': 0.01, 'kappa': 0.0}], unique_augs=2, val_check_interval=1.0, val_dir=PosixPath('1K_New/val'), wandb=True, warmup_epochs=10, warmup_start_lr=3e-05, weight_decay=1e-06, weights_save_path=None, weights_summary='top')
+{'eps': 0.03137254901960784, 'stepsize': 0.003137254901960784, 'steps': 20, 'decay_factor': 1.0, 'resize_rate': 0.85, 'diversity_prob': 0.7, 'overshoot': 0.02, 'max_iter': 50, 'max_cw_iter': 200, 'binary_search_steps': 4, 'cw_lr': 0.2, 'init_const': 0.01, 'kappa': 0.0}
+finish prepare transform
+{'eps': 0.03137254901960784, 'stepsize': 0.003137254901960784, 'steps': 20, 'decay_factor': 1.0, 'resize_rate': 0.85, 'diversity_prob': 0.7, 'overshoot': 0.02, 'max_iter': 50, 'max_cw_iter': 200, 'binary_search_steps': 4, 'cw_lr': 0.2, 'init_const': 0.01, 'kappa': 0.0}
+finish prepare transform
+wandb: wandb version 0.12.11 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.12.10
+wandb: Syncing run byol-resnet50-imagenet-100ep
+wandb: ⭐️ View project at https://wandb.ai/tinghsuan/solo-learn
+wandb: 🚀 View run at https://wandb.ai/tinghsuan/solo-learn/runs/2xw7rh0v
+wandb: Run data is saved locally in /data2/Adv_SSL/solo-learn/bash_files/pretrain/imagenet/wandb/run-20220402_063214-2xw7rh0v
+wandb: Run `wandb offline` to turn off syncing.
+[34m[1mwandb[0m: logging graph, to disable use `wandb.watch(log_graph=False)`
+Using 16bit native Automatic Mixed Precision (AMP)
+GPU available: True, used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+/opt/conda/lib/python3.7/site-packages/pytorch_lightning/trainer/configuration_validator.py:281: LightningDeprecationWarning: Base `LightningModule.on_train_batch_end` hook signature has changed in v1.5. The `dataloader_idx` argument will be removed in v1.7.
+  f"Base `LightningModule.{hook}` hook signature has changed in v1.5."
+Global seed set to 5
+initializing distributed: GLOBAL_RANK: 0, MEMBER: 1/2
+Global seed set to 5
+Global seed set to 5
+initializing distributed: GLOBAL_RANK: 1, MEMBER: 2/2
+Namespace(accelerator='gpu', accumulate_grad_batches=16, amp_backend='native', amp_level=None, attack_method=['fgsm', 'fgsm'], auto_lr_find=False, auto_resume=False, auto_scale_batch_size=False, auto_select_gpus=False, auto_umap=False, backbone='resnet50', backbone_args={'cifar': False, 'zero_init_residual': False}, base_tau_momentum=0.99, batch_size=128, benchmark=False, binary_search_steps=[4, 4], brightness=[0.4], check_val_every_n_epoch=1, checkpoint_callback=None, checkpoint_dir=PosixPath('trained_models'), checkpoint_frequency=1, classifier_lr=0.2, color_jitter_prob=[0.8], contrast=[0.4], crop_size=[224], cw_lr=[0.2, 0.2], dali=False, dali_device='gpu', data_dir=PosixPath('/data2'), dataset='adv_imagenet', debug_augmentations=False, decay_factor=[1.0, 1.0], default_root_dir=None, detect_anomaly=False, deterministic=False, devices=None, distance=['Linf', 'Linf'], diversity_prob=[0.7, 0.7], enable_checkpointing=True, enable_model_summary=True, enable_progress_bar=True, encode_indexes_into_labels=False, entity='tinghsuan', eps=[0.03137254901960784, 0.03137254901960784], eta_lars=0.001, exclude_bias_n_norm=True, extra_optimizer_args={'momentum': 0.9}, fast_dev_run=False, final_tau_momentum=1.0, flush_logs_every_n_steps=None, gaussian_prob=[1.0, 0.1], gpus=[4, 7], grad_clip_lars=False, gradient_clip_algorithm=None, gradient_clip_val=None, gray_scale_prob=[0.2], horizontal_flip_prob=[0.5], hue=[0.1], init_const=[0.01, 0.01], ipus=None, kappa=[0.0, 0.0], knn_eval=False, knn_k=20, lars=True, limit_predict_batches=1.0, limit_test_batches=1.0, limit_train_batches=1.0, limit_val_batches=1.0, log_every_n_steps=50, log_gpu_memory=None, logger=True, loss=['ce', 'ce'], lr=0.45, lr_decay_steps=None, max_cw_iter=[200, 200], max_epochs=100, max_iter=[50, 50], max_scale=[1.0], max_steps=-1, max_time=None, mean=[0.485, 0.456, 0.406], method='Adv_byol', min_epochs=None, min_lr=0.0, min_scale=[0.08], min_steps=None, momentum_classifier=True, move_metrics_to_cpu=False, multiple_trainloader_mode='max_size_cycle', name='byol-resnet50-imagenet-100ep', no_labels=False, num_classes=2000, num_crops_per_aug=[1, 1], num_large_crops=1, num_nodes=1, num_processes=1, num_sanity_val_steps=2, num_small_crops=0, num_workers=4, offline=False, optimizer='sgd', overfit_batches=0.0, overshoot=[0.02, 0.02], plugins=None, precision=16, pred_hidden_dim=4096, prepare_data_per_node=None, process_position=0, profiler=None, progress_bar_refresh_rate=None, proj_hidden_dim=4096, proj_output_dim=256, project='solo-learn', reload_dataloaders_every_epoch=False, reload_dataloaders_every_n_epochs=0, replace_sampler_ddp=True, resize_rate=[0.85, 0.85], resume_from_checkpoint=None, saturation=[0.2], save_checkpoint=True, scheduler='warmup_cosine', solarization_prob=[0.0, 0.2], std=[0.228, 0.224, 0.225], steps=[20, 20], stepsize=[0.003137254901960784, 0.003137254901960784], stochastic_weight_avg=False, strategy='ddp', sync_batchnorm=True, target=[True, True], target_net=['resnet50', 'resnet50'], terminate_on_nan=None, tpu_cores=None, track_grad_norm=-1, train_dir=PosixPath('1K_New/train'), transform_kwargs=[{'attack_method': 'fgsm', 'target_net': 'resnet50', 'distance': 'Linf', 'loss': 'ce', 'target': True, 'eps': 0.03137254901960784, 'stepsize': 0.003137254901960784, 'steps': 20, 'decay_factor': 1.0, 'resize_rate': 0.85, 'diversity_prob': 0.7, 'overshoot': 0.02, 'max_iter': 50, 'max_cw_iter': 200, 'binary_search_steps': 4, 'cw_lr': 0.2, 'init_const': 0.01, 'kappa': 0.0}, {'attack_method': 'fgsm', 'target_net': 'resnet50', 'distance': 'Linf', 'loss': 'ce', 'target': True, 'eps': 0.03137254901960784, 'stepsize': 0.003137254901960784, 'steps': 20, 'decay_factor': 1.0, 'resize_rate': 0.85, 'diversity_prob': 0.7, 'overshoot': 0.02, 'max_iter': 50, 'max_cw_iter': 200, 'binary_search_steps': 4, 'cw_lr': 0.2, 'init_const': 0.01, 'kappa': 0.0}], unique_augs=2, val_check_interval=1.0, val_dir=PosixPath('1K_New/val'), wandb=True, warmup_epochs=10, warmup_start_lr=3e-05, weight_decay=1e-06, weights_save_path=None, weights_summary='top')
+{'eps': 0.03137254901960784, 'stepsize': 0.003137254901960784, 'steps': 20, 'decay_factor': 1.0, 'resize_rate': 0.85, 'diversity_prob': 0.7, 'overshoot': 0.02, 'max_iter': 50, 'max_cw_iter': 200, 'binary_search_steps': 4, 'cw_lr': 0.2, 'init_const': 0.01, 'kappa': 0.0}
+finish prepare transform
+{'eps': 0.03137254901960784, 'stepsize': 0.003137254901960784, 'steps': 20, 'decay_factor': 1.0, 'resize_rate': 0.85, 'diversity_prob': 0.7, 'overshoot': 0.02, 'max_iter': 50, 'max_cw_iter': 200, 'binary_search_steps': 4, 'cw_lr': 0.2, 'init_const': 0.01, 'kappa': 0.0}
+finish prepare transform
+----------------------------------------------------------------------------------------------------
+distributed_backend=nccl
+All distributed processes registered. Starting with 2 processes
+----------------------------------------------------------------------------------------------------
+
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0,1,2,3,4,5,6,7]
+LOCAL_RANK: 1 - CUDA_VISIBLE_DEVICES: [0,1,2,3,4,5,6,7]
+
+  | Name                | Type       | Params
+---------------------------------------------------
+0 | backbone            | ResNet     | 23.5 M
+1 | classifier          | Linear     | 4.1 M 
+2 | momentum_backbone   | ResNet     | 23.5 M
+3 | momentum_classifier | Linear     | 4.1 M 
+4 | projector           | Sequential | 9.4 M 
+5 | momentum_projector  | Sequential | 9.4 M 
+6 | predictor           | Sequential | 2.1 M 
+---------------------------------------------------
+43.3 M    Trainable params
+33.0 M    Non-trainable params
+76.2 M    Total params
+152.442   Total estimated model params size (MB)
+
+Validation sanity check: 0it [00:00, ?it/s]Validation sanity check:   0%|                                                      | 0/2 [00:00<?, ?it/s]Validation sanity check:  50%|███████████████████████                       | 1/2 [00:02<00:02,  2.30s/it]                                                                                                          Global seed set to 5
+Global seed set to 5
+Training: 0it [00:00, ?it/s]Training:   0%|                                                                  | 0/5200 [00:00<?, ?it/s]Epoch 0:   0%|                                                                   | 0/5200 [00:00<?, ?it/s]Traceback (most recent call last):
+  File "/data2/Adv_SSL/solo-learn/main_pretrain.py", line 191, in <module>
+    main()
+  File "/data2/Adv_SSL/solo-learn/main_pretrain.py", line 187, in main
+    trainer.fit(model, ckpt_path=ckpt_path)
+  File "/opt/conda/lib/python3.7/site-packages/pytorch_lightning/trainer/trainer.py", line 738, in fit
+    self._fit_impl, model, train_dataloaders, val_dataloaders, datamodule, ckpt_path
+  File "/opt/conda/lib/python3.7/site-packages/pytorch_lightning/trainer/trainer.py", line 682, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "/opt/conda/lib/python3.7/site-packages/pytorch_lightning/trainer/trainer.py", line 772, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "/opt/conda/lib/python3.7/site-packages/pytorch_lightning/trainer/trainer.py", line 1195, in _run
+    self._dispatch()
+  File "/opt/conda/lib/python3.7/site-packages/pytorch_lightning/trainer/trainer.py", line 1274, in _dispatch
+    self.training_type_plugin.start_training(self)
+  File "/opt/conda/lib/python3.7/site-packages/pytorch_lightning/plugins/training_type/training_type_plugin.py", line 202, in start_training
+    self._results = trainer.run_stage()
+  File "/opt/conda/lib/python3.7/site-packages/pytorch_lightning/trainer/trainer.py", line 1284, in run_stage
+    return self._run_train()
+  File "/opt/conda/lib/python3.7/site-packages/pytorch_lightning/trainer/trainer.py", line 1314, in _run_train
+    self.fit_loop.run()
+  File "/opt/conda/lib/python3.7/site-packages/pytorch_lightning/loops/base.py", line 145, in run
+    self.advance(*args, **kwargs)
+  File "/opt/conda/lib/python3.7/site-packages/pytorch_lightning/loops/fit_loop.py", line 234, in advance
+    self.epoch_loop.run(data_fetcher)
+  File "/opt/conda/lib/python3.7/site-packages/pytorch_lightning/loops/base.py", line 140, in run
+    self.on_run_start(*args, **kwargs)
+  File "/opt/conda/lib/python3.7/site-packages/pytorch_lightning/loops/epoch/training_epoch_loop.py", line 141, in on_run_start
+    self._dataloader_iter = _update_dataloader_iter(data_fetcher, self.batch_idx + 1)
+  File "/opt/conda/lib/python3.7/site-packages/pytorch_lightning/loops/utilities.py", line 121, in _update_dataloader_iter
+    dataloader_iter = enumerate(data_fetcher, batch_idx)
+  File "/opt/conda/lib/python3.7/site-packages/pytorch_lightning/utilities/fetching.py", line 199, in __iter__
+    self.prefetching(self.prefetch_batches)
+  File "/opt/conda/lib/python3.7/site-packages/pytorch_lightning/utilities/fetching.py", line 258, in prefetching
+    self._fetch_next_batch()
+  File "/opt/conda/lib/python3.7/site-packages/pytorch_lightning/utilities/fetching.py", line 300, in _fetch_next_batch
+    batch = next(self.dataloader_iter)
+  File "/opt/conda/lib/python3.7/site-packages/pytorch_lightning/trainer/supporters.py", line 550, in __next__
+    return self.request_next_batch(self.loader_iters)
+  File "/opt/conda/lib/python3.7/site-packages/pytorch_lightning/trainer/supporters.py", line 562, in request_next_batch
+    return apply_to_collection(loader_iters, Iterator, next)
+  File "/opt/conda/lib/python3.7/site-packages/pytorch_lightning/utilities/apply_func.py", line 92, in apply_to_collection
+    return function(data, *args, **kwargs)
+  File "/opt/conda/lib/python3.7/site-packages/torch/utils/data/dataloader.py", line 521, in __next__
+    data = self._next_data()
+  File "/opt/conda/lib/python3.7/site-packages/torch/utils/data/dataloader.py", line 1203, in _next_data
+    return self._process_data(data)
+  File "/opt/conda/lib/python3.7/site-packages/torch/utils/data/dataloader.py", line 1229, in _process_data
+    data.reraise()
+  File "/opt/conda/lib/python3.7/site-packages/torch/_utils.py", line 434, in reraise
+    raise exception
+TypeError: Caught TypeError in DataLoader worker process 0.
+Original Traceback (most recent call last):
+  File "/opt/conda/lib/python3.7/site-packages/torch/utils/data/_utils/worker.py", line 287, in _worker_loop
+    data = fetcher.fetch(index)
+  File "/opt/conda/lib/python3.7/site-packages/torch/utils/data/_utils/fetch.py", line 49, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/opt/conda/lib/python3.7/site-packages/torch/utils/data/_utils/fetch.py", line 49, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/data2/Adv_SSL/solo-learn/solo/utils/pretrain_dataloader.py", line 51, in __getitem__
+    data = super().__getitem__(index)
+  File "/data2/Adv_SSL/solo-learn/solo/utils/pretrain_dataloader.py", line 65, in __getitem__
+    img, lb = super().__getitem__(index)
+  File "/opt/conda/lib/python3.7/site-packages/torchvision/datasets/folder.py", line 234, in __getitem__
+    sample = self.transform(sample)
+  File "/data2/Adv_SSL/solo-learn/solo/utils/pretrain_dataloader.py", line 184, in __call__
+    out.extend(transform(x))
+  File "/data2/Adv_SSL/solo-learn/solo/utils/pretrain_dataloader.py", line 162, in __call__
+    return [self.transform(x) for _ in range(self.num_crops)]
+  File "/data2/Adv_SSL/solo-learn/solo/utils/pretrain_dataloader.py", line 162, in <listcomp>
+    return [self.transform(x) for _ in range(self.num_crops)]
+  File "/data2/Adv_SSL/solo-learn/solo/utils/pretrain_dataloader.py", line 531, in __call__
+    image = x['img']
+TypeError: 'Image' object is not subscriptable
+
+Traceback (most recent call last):
+  File "../../../main_pretrain.py", line 191, in <module>
+    main()
+  File "../../../main_pretrain.py", line 187, in main
+    trainer.fit(model, ckpt_path=ckpt_path)
+  File "/opt/conda/lib/python3.7/site-packages/pytorch_lightning/trainer/trainer.py", line 738, in fit
+    self._fit_impl, model, train_dataloaders, val_dataloaders, datamodule, ckpt_path
+  File "/opt/conda/lib/python3.7/site-packages/pytorch_lightning/trainer/trainer.py", line 682, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "/opt/conda/lib/python3.7/site-packages/pytorch_lightning/trainer/trainer.py", line 772, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "/opt/conda/lib/python3.7/site-packages/pytorch_lightning/trainer/trainer.py", line 1195, in _run
+    self._dispatch()
+  File "/opt/conda/lib/python3.7/site-packages/pytorch_lightning/trainer/trainer.py", line 1274, in _dispatch
+    self.training_type_plugin.start_training(self)
+  File "/opt/conda/lib/python3.7/site-packages/pytorch_lightning/plugins/training_type/training_type_plugin.py", line 202, in start_training
+    self._results = trainer.run_stage()
+  File "/opt/conda/lib/python3.7/site-packages/pytorch_lightning/trainer/trainer.py", line 1284, in run_stage
+    return self._run_train()
+  File "/opt/conda/lib/python3.7/site-packages/pytorch_lightning/trainer/trainer.py", line 1314, in _run_train
+    self.fit_loop.run()
+  File "/opt/conda/lib/python3.7/site-packages/pytorch_lightning/loops/base.py", line 145, in run
+    self.advance(*args, **kwargs)
+  File "/opt/conda/lib/python3.7/site-packages/pytorch_lightning/loops/fit_loop.py", line 234, in advance
+    self.epoch_loop.run(data_fetcher)
+  File "/opt/conda/lib/python3.7/site-packages/pytorch_lightning/loops/base.py", line 140, in run
+    self.on_run_start(*args, **kwargs)
+  File "/opt/conda/lib/python3.7/site-packages/pytorch_lightning/loops/epoch/training_epoch_loop.py", line 141, in on_run_start
+    self._dataloader_iter = _update_dataloader_iter(data_fetcher, self.batch_idx + 1)
+  File "/opt/conda/lib/python3.7/site-packages/pytorch_lightning/loops/utilities.py", line 121, in _update_dataloader_iter
+    dataloader_iter = enumerate(data_fetcher, batch_idx)
+  File "/opt/conda/lib/python3.7/site-packages/pytorch_lightning/utilities/fetching.py", line 199, in __iter__
+    self.prefetching(self.prefetch_batches)
+  File "/opt/conda/lib/python3.7/site-packages/pytorch_lightning/utilities/fetching.py", line 258, in prefetching
+    self._fetch_next_batch()
+  File "/opt/conda/lib/python3.7/site-packages/pytorch_lightning/utilities/fetching.py", line 300, in _fetch_next_batch
+    batch = next(self.dataloader_iter)
+  File "/opt/conda/lib/python3.7/site-packages/pytorch_lightning/trainer/supporters.py", line 550, in __next__
+    return self.request_next_batch(self.loader_iters)
+  File "/opt/conda/lib/python3.7/site-packages/pytorch_lightning/trainer/supporters.py", line 562, in request_next_batch
+    return apply_to_collection(loader_iters, Iterator, next)
+  File "/opt/conda/lib/python3.7/site-packages/pytorch_lightning/utilities/apply_func.py", line 92, in apply_to_collection
+    return function(data, *args, **kwargs)
+  File "/opt/conda/lib/python3.7/site-packages/torch/utils/data/dataloader.py", line 521, in __next__
+    data = self._next_data()
+  File "/opt/conda/lib/python3.7/site-packages/torch/utils/data/dataloader.py", line 1203, in _next_data
+    return self._process_data(data)
+  File "/opt/conda/lib/python3.7/site-packages/torch/utils/data/dataloader.py", line 1229, in _process_data
+    data.reraise()
+  File "/opt/conda/lib/python3.7/site-packages/torch/_utils.py", line 434, in reraise
+    raise exception
+TypeError: Caught TypeError in DataLoader worker process 0.
+Original Traceback (most recent call last):
+  File "/opt/conda/lib/python3.7/site-packages/torch/utils/data/_utils/worker.py", line 287, in _worker_loop
+    data = fetcher.fetch(index)
+  File "/opt/conda/lib/python3.7/site-packages/torch/utils/data/_utils/fetch.py", line 49, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/opt/conda/lib/python3.7/site-packages/torch/utils/data/_utils/fetch.py", line 49, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/data2/Adv_SSL/solo-learn/solo/utils/pretrain_dataloader.py", line 51, in __getitem__
+    data = super().__getitem__(index)
+  File "/data2/Adv_SSL/solo-learn/solo/utils/pretrain_dataloader.py", line 65, in __getitem__
+    img, lb = super().__getitem__(index)
+  File "/opt/conda/lib/python3.7/site-packages/torchvision/datasets/folder.py", line 234, in __getitem__
+    sample = self.transform(sample)
+  File "/data2/Adv_SSL/solo-learn/solo/utils/pretrain_dataloader.py", line 184, in __call__
+    out.extend(transform(x))
+  File "/data2/Adv_SSL/solo-learn/solo/utils/pretrain_dataloader.py", line 162, in __call__
+    return [self.transform(x) for _ in range(self.num_crops)]
+  File "/data2/Adv_SSL/solo-learn/solo/utils/pretrain_dataloader.py", line 162, in <listcomp>
+    return [self.transform(x) for _ in range(self.num_crops)]
+  File "/data2/Adv_SSL/solo-learn/solo/utils/pretrain_dataloader.py", line 531, in __call__
+    image = x['img']
+TypeError: 'Image' object is not subscriptable
+
+wandb: Waiting for W&B process to finish, PID 52739... (failed 1). Press ctrl-c to abort syncing.
+wandb: - 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: \ 0.00MB of 0.02MB uploaded (0.00MB deduped)wandb: | 0.00MB of 0.02MB uploaded (0.00MB deduped)wandb: / 0.02MB of 0.02MB uploaded (0.00MB deduped)wandb: - 0.02MB of 0.02MB uploaded (0.00MB deduped)wandb: \ 0.02MB of 0.02MB uploaded (0.00MB deduped)wandb: | 0.02MB of 0.02MB uploaded (0.00MB deduped)wandb: / 0.02MB of 0.02MB uploaded (0.00MB deduped)wandb: - 0.02MB of 0.02MB uploaded (0.00MB deduped)wandb: \ 0.02MB of 0.02MB uploaded (0.00MB deduped)wandb:                                                                                
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Synced byol-resnet50-imagenet-100ep: https://wandb.ai/tinghsuan/solo-learn/runs/2xw7rh0v
+wandb: Find logs at: ./wandb/run-20220402_063214-2xw7rh0v/logs/debug.log
+wandb: 
+

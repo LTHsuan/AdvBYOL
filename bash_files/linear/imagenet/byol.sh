@@ -1,0 +1,28 @@
+python3 ../../../main_linear.py \
+    --dataset adv_imagenet \
+    --backbone resnet50 \
+    --data_dir /data2 \
+    --train_dir 1K_New/train \
+    --val_dir 1K_New/val \
+    --subset_class_num 100 \
+    --max_epochs 80 \
+    --gpus 0,1 \
+    --accelerator gpu \
+    --strategy ddp \
+    --sync_batchnorm \
+    --precision 16 \
+    --optimizer sgd \
+    --scheduler step \
+    --lr 0.1 \
+    --lr_decay_steps 20 40 60 \
+    --weight_decay 0 \
+    --batch_size 512 \
+    --num_workers 20 \
+    --pretrained_feature_extractor ../../../experiment_result/Adv_byol/zu6u5oqj/fgsmlinf-byol-Pretrainedresnet50-imagenet100-800ep-zu6u5oqj-ep=700.ckpt \
+    --name fgsmlinf-byol-resnet50-imagenet100-700ep-linear-eval\
+    --entity tinghsuan \
+    --project solo-learn \
+    --wandb \
+    --save_checkpoint \
+    --checkpoint_dir ../../../experiment_result \
+    # --dali \
