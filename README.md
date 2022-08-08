@@ -8,83 +8,15 @@
 
 # AdvBYOL:Adversarial Bootstrap Your Own Latent for Model Robustness against Adversarial Attacks
 
-A library of self-supervised methods for unsupervised visual representation learning powered by PyTorch Lightning.
-We aim at providing SOTA self-supervised methods in a comparable environment while, at the same time, implementing training tricks.
-While the library is self-contained, it is possible to use the models outside of solo-learn.
+This is a demo implementation of Adversarial Bootstrap Your Own Latent (AdvBYOL) to train the model in self-supervised learning, which learns to distinguish the adversarial example from the original data without providing the correct label. We validate our method on the large-scale ImageNet dataset, and obtains comparable robust accuracy over state-of-the-art supervised adversarial learning approaches.
 
 ---
 
-## News
-* **[Feb 04 2022]**: :partying_face: Paper got accepted to JMLR.
-* **[Jan 31 2022]**: :eye: Added ConvNeXt support with timm.
-* **[Dec 20 2021]**: :thermometer: Added ImageNet results, scripts and checkpoints for MoCo V2+.
-* **[Dec 05 2021]**: :notes: Separated [SupCon](https://arxiv.org/abs/2004.11362) from SimCLR and added runs.
-* **[Dec 01 2021]**: :fountain: Added [PoolFormer](https://arxiv.org/abs/2111.11418).
-* **[Nov 29 2021]**: :bangbang: Breaking changes! Update your versions!!!
-* **[Nov 29 2021]**: :book: New tutorials!
-* **[Nov 29 2021]**: :houses: Added offline K-NN and offline UMAP.
-* **[Nov 29 2021]**: :rotating_light: Updated PyTorch and PyTorch Lightning versions. 10% faster.
-* **[Nov 29 2021]**: :beers: Added code of conduct, contribution instructions, issue templates and UMAP tutorial.
-* **[Nov 23 2021]**: :space_invader: Added [VIbCReg](https://arxiv.org/abs/2109.00783).
-* **[Oct 21 2021]**: :triumph: Added support for object recognition via Detectron v2 and auto resume functionally that automatically tries to resume an experiment that crashed/reached a timeout.
-* **[Oct 10 2021]**: :japanese_ogre: Restructured augmentation pipelines to allow more flexibility and multicrop. Also added multicrop for BYOL.
-* **[Sep 27 2021]**: :pizza: Added [NNSiam](https://arxiv.org/abs/2104.14548), [NNBYOL](https://arxiv.org/abs/2104.14548), new tutorials for implementing new methods [1](https://solo-learn.readthedocs.io/en/latest/tutorials/add_new_method.html) and [2](https://solo-learn.readthedocs.io/en/latest/tutorials/add_new_method_momentum.html), more testing and fixed issues with custom data and linear evaluation.
-* **[Sep 19 2021]**: :kangaroo: Added online k-NN evaluation.
-* **[Sep 17 2021]**: :robot: Added [ViT](https://arxiv.org/abs/2010.11929) and [Swin](https://arxiv.org/abs/2103.14030).
-* **[Sep 13 2021]**: :book: Improved [Docs](https://solo-learn.readthedocs.io/en/latest/?badge=latest) and added tutorials for [pretraining](https://solo-learn.readthedocs.io/en/latest/tutorials/overview.html) and [offline linear eval](https://solo-learn.readthedocs.io/en/latest/tutorials/offline_linear_eval.html).
-* **[Aug 13 2021]**: :whale: [DeepCluster V2](https://arxiv.org/abs/2006.09882) is now available.
 
 ---
 
-## Methods available:
-* [Barlow Twins](https://arxiv.org/abs/2103.03230)
-* [BYOL](https://arxiv.org/abs/2006.07733)
-* [DeepCluster V2](https://arxiv.org/abs/2006.09882)
-* [DINO](https://arxiv.org/abs/2104.14294)
-* [MoCo V2+](https://arxiv.org/abs/2003.04297)
-* [NNBYOL](https://arxiv.org/abs/2104.14548)
-* [NNCLR](https://arxiv.org/abs/2104.14548)
-* [NNSiam](https://arxiv.org/abs/2104.14548)
-* [ReSSL](https://arxiv.org/abs/2107.09282)
-* [SimCLR](https://arxiv.org/abs/2002.05709)
-* [SimSiam](https://arxiv.org/abs/2011.10566)
-* [Supervised Contrastive Learning](https://arxiv.org/abs/2004.11362)
-* [SwAV](https://arxiv.org/abs/2006.09882)
-* [VIbCReg](https://arxiv.org/abs/2109.00783)
-* [VICReg](https://arxiv.org/abs/2105.04906)
-* [W-MSE](https://arxiv.org/abs/2007.06346)
 
 ---
-
-## Extra flavor
-
-### Multiple backbones
-* [ResNet](https://arxiv.org/abs/1512.03385)
-* [ViT](https://arxiv.org/abs/2010.11929)
-* [Swin](https://arxiv.org/abs/2103.14030)
-* [PoolFormer](https://arxiv.org/abs/2111.11418)
-* [ConvNeXt](https://arxiv.org/abs/2201.03545)
-
-### Data
-* Increased data processing speed by up to 100% using [Nvidia Dali](https://github.com/NVIDIA/DALI).
-* Flexible augmentations.
-
-### Evaluation and logging
-* Online linear evaluation via stop-gradient for easier debugging and prototyping (optionally available for the momentum backbone as well).
-* Online and offline K-NN evaluation.
-* Normal offline linear evaluation.
-* All the perks of PyTorch Lightning (mixed precision, gradient accumulation, clipping, automatic logging and much more).
-* Easy-to-extend modular code structure.
-* Custom model logging with a simpler file organization.
-* Automatic feature space visualization with UMAP.
-* Offline UMAP.
-* Common metrics.
-
-### Training tricks
-* Multi-cropping dataloading following [SwAV](https://arxiv.org/abs/2006.09882):
-    * **Note**: currently, only SimCLR and BYOL supports this.
-* Exclude batchnorm and biases from LARS.
-* No LR scheduler for the projection head in SimSiam.
 
 ---
 ## Requirements
@@ -108,25 +40,6 @@ While the library is self-contained, it is possible to use the models outside of
 
 ---
 
-## Installation
-
-First clone the repo.
-
-Then, to install solo-learn with [Dali](https://github.com/NVIDIA/DALI) and/or UMAP support, use:
-```
-pip3 install .[dali,umap] --extra-index-url https://developer.download.nvidia.com/compute/redist
-```
-
-If no Dali/UMAP support is needed, the repository can be installed as:
-```
-pip3 install .
-```
-
-**NOTE:** if you are having trouble with dali, install it following their [guide](https://github.com/NVIDIA/DALI).
-
-**NOTE 2:** consider installing [Pillow-SIMD](https://github.com/uploadcare/pillow-simd) for better loading times when not using Dali.
-
-**NOTE 3:** Soon to be on pip.
 
 ---
 
