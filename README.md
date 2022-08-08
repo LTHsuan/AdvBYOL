@@ -6,7 +6,7 @@
 
 </div>
 
-# solo-learn
+# AdvBYOL:Adversarial Bootstrap Your Own Latent for Model Robustness against Adversarial Attacks
 
 A library of self-supervised methods for unsupervised visual representation learning powered by PyTorch Lightning.
 We aim at providing SOTA self-supervised methods in a comparable environment while, at the same time, implementing training tricks.
