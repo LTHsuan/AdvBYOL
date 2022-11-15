@@ -32,57 +32,61 @@ Please download ImageNet1K dataset (https://www.image-net.org/download.php).Then
 ## Training
 ### Pretraining
 - For quickly start, you can simply use the `AdvBYOL/bash_files/pretrain/imagenet/adv_byol.sh` to Pretrain 
-- If you want to modify some hyper-parameters, please edit them in the configuration file `AdvBYOL/bash_files/pretrain/imagenet/adv_byol.sh` following the explanations below:
-  - `dataset`:
-  - `backbone`:
-  - `pretrained`:
-  - `data_dir`: 
-  - `train_dir`:
-  - `val_dir` :
-  - `subset_class_num`:
-  - `max_epochs`:
-  - `gpus`:
-  - `accelerator`:
-  - `strategy`:
-  - `sync_batchnorm`:
-  - `precision`:
-  - `optimizer`:
-  - `lars`:
-  - `eta_lars`:
-  - `exclude_bias_n_norm`:
-  - `scheduler`:
-  - `lr`:
-  - `accumulate_grad_batches`:
-  - `classifier_lr`:
-  - `weight_decay`:
-  - `batch_size`:
-  - `num_workers`:
-  - `method`:
-  - `num_crops_per_aug`:
-  - `brightness`:
-  - `contrast`:
-  - `saturation`:
-  - `hue`:
-  - `gaussian_prob`:
-  - `solarization_prob`:
-  - `attack_method`:
-  - `target_net`:
-  - `distance`:
-  - `target`:
-  - `wandb`:
-  - `name`:
-  - `entity`:
-  - `project`:
-  - `save_checkpoint`:
-  - `checkpoint_dir`:
-  - `checkpoint_frequency`:
-  - `keep_previous_checkpoints`:
-  - `proj_output_dim`:
-  - `proj_hidden_dim`:
-  - `pred_hidden_dim`:
-  - `base_tau_momentum`:
-  - `final_tau_momentum`:
-  - `momentum_classifier`:
+- If you want to modify some hyper-parameters, please edit them in the configuration file `AdvBYOL/bash_files/pretrain/imagenet/adv_byol.sh` following the explanations below (More hyper-parameters are in the file `AdvBYOL/solo/args/dataset.py`):
+  #### Training args.
+  - `dataset`: Please set as 'adv_imagenet' which contain the attack method as data augmentation.
+  - `backbone`: The model for SSL training
+  - `pretrained`: Model with pretrained weight or not
+  - `data_dir`: directory according to your path
+  - `train_dir`: training dataset directory according to your path
+  - `val_dir`: valudation dataset directory according to your path
+  - `subset_class_num`: training using numbers of classes from dataset.
+  - `max_epochs`: training expoch
+  - `gpus`: CUDA_VISIBLE_DEVICES list
+  - `accelerator`: GPU accelerate
+  - `strategy`: set as ddp, ssing 'DISTRIBUTED DATA PARALLEL' to train
+  - `sync_batchnorm`: Using batch normalization
+  - `optimizer`: name of the optimizer.
+  - `lars`: flag indicating if lars should be used.
+  - `eta_lars`:eta parameter for lars.
+  - `exclude_bias_n_norm`: flag indicating if bias and norms should be excluded from lars.
+  - `scheduler`: name of the scheduler.
+  - `lr`: Learning Rate for training
+  - `accumulate_grad_batches`: number of batches for gradient accumulation.
+  - `classifier_lr`: learning rate for the online linear classifier.
+  - `weight_decay`: weight decay for optimizer.
+  - `batch_size`: number of samples in the batch.
+  - `num_workers`: numbers of workers
+  - `method`: Please set as `Adv_byol` which contain the attack method as data augmentation.
+  #### SSL data argumetation args.
+  - `num_crops_per_aug`: data augmentation for SSL training 
+  - `brightness`: (color jitter)Brightness probability
+  - `contrast`: (color jitter)Contrast probability
+  - `saturation`: (color jitter)Saturation probability
+  - `hue`: (color jitter)Hue probability 
+  - `gaussian_prob`: Gaussian Blur Probability
+  - `solarization_prob`: solarization Probability
+  #### Adversarial Attack args.
+  - `attack_method`: Adversarial Attack method
+  - `target_net`: Model which attack by attack method to generate the attack image for training
+  - `distance`: distance to reduce the attack image and original image
+  - `target`: Target attack or Non-target Attack
+  #### Wandb & Checkpoint args.
+  - `wandb`: Using wandb or not
+  - `name`: name for saving this training in Wandb
+  - `entity`: Wandb User name
+  - `project`: Wandb project's name
+  - `save_checkpoint`:flag indicating if save checkpoint should be used.
+  - `checkpoint_dir`: the directory for saving checkpoint
+  - `checkpoint_frequency`: how frequency to save checkpoint
+  - `keep_previous_checkpoints`: flag indicating keeping previous checkpoint or not
+  #### SSL Training method's args.
+  - `proj_output_dim`: number of dimensions of projected features.
+  - `proj_hidden_dim`: number of neurons of the hidden layers of the projector.
+  - `pred_hidden_dim`: number of neurons of the hidden layers of the predictor.
+  - `base_tau_momentum`: base value of the weighting decrease coefficient
+  - `final_tau_momentum`: final value of the weighting decrease coefficient
+  - `momentum_classifier`: whether or not to train a classifier on top of the momentum backbone.
   
 ### Linear Evaluation
 - For quickly start, you can simply use the `AdvBYOL/bash_files/linear/imagenet/byol.sh` to Finetuned(Linear evaluation)
